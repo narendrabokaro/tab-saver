@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Getting Started Extension's Popup</title>
+    <style>
+      body {
+		height: 100%;
+		width: 100%;
+        min-width: 600px;
+        min-height: 300px;        
+      }
+	  
+	  header {	  
+		text-align: center;
+		height: 10%;		
+		width: inherit;
+	  }
+	  
+	  header h2 {
+		text-shadow: 2px 2px 4px black;
+	  }
+	  
+	  nav {		
+		height: 10%;
+		width: inherit;		
+	  }
+	  
+	  .tab {
+		width: 95%;
+		height: auto;
+		border: 2px solid white;
+		border-radius: 15px;
+		margin-bottom: 4px;
+		padding-left: 5px;
+		padding-bottom: 2px;		
+	  }
+	  .read_icon {
+		padding-top: 1px;
+		position: absolute;
+		padding-left: 2px;
+	  }
+	  
+	  .delete_icon {
+		padding-top: 1px;
+		position: absolute;
+		padding-left: 2px;
+	  }
+	  
+	  section {
+		height: auto;
+		width: 30%;
+		background: #dddddd;
+		float: left;
+		overflow: hidden;
+		padding: 5px;
+		
+		border: 2px solid #a1a1a1;
+		border-radius: 20px;
+			
+		margin-top: 5px;
+		margin-right: 5px;
+		margin-bottom: 5px;				
+	  }	
+	  
+	  #old_tabs, #new_tabs {
+		width: 100%;
+	  }
+	  
+	  section a {
+		text-decoration: none;
+	  }
+	  
+	  img {
+		height: 15px;
+		width: 15px;
+	  }
+    </style>
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: http://developer.chrome.com/extensions/contentSecurityPolicy.html
+     -->
+    <script src="main.js"></script>
+  </head>
+  <body>
+	<header><h2>Tabs Saver and bookmarker</h2></header>
+	<nav>
+		<input type="button" value="Add new tabs" id="tab_saver" />
+		<input type="button" value="View" id="tab_viewer" />	
+	</nav>
+	<section>
+		<h3>Tabs from previous session</h3>
+		<div id="old_tabs">
+			<div class="tab">  <a href="http://timesofindia.indiatimes.com/">The Times of India: Lates</a>
+				<span class="read_icon"><image src="https://cdn3.iconfinder.com/data/icons/pyconic-icons-2-1/512/read-512.png" /></span>
+				<span class="delete_icon"><image src="http://4.bp.blogspot.com/-8tTPkFrL--w/ToTiRYfQ0iI/AAAAAAAADxw/iv8l_ALS7So/s1600/delete-icon.jpg" /></span>
+			</div>
+			<div class="tab">  <a href="http://timesofindia.indiatimes.com/">The Times of India: Lates</a></div>
+			<div class="tab">  <a href="http://timesofindia.indiatimes.com/">The Times of India: Lates</a></div>
+		</div>
+	</section>
+	<section>
+		<h3>Today's visited tabs</h3>
+		<div id="new_tabs"></div>
+	</section>			
+  </body>
+</html>
+
